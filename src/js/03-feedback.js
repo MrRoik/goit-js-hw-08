@@ -30,6 +30,7 @@ descFeedbackForm();
 function onInputData() {
    dataForm = { email: email.value, message: message.value };
   localStorage.setItem(LS_KEY, JSON.stringify(dataForm));
+  console.log(dataForm);
 }
 
 function descFeedbackForm() {
@@ -41,12 +42,6 @@ function descFeedbackForm() {
 
 function onFormSubmit(event) {
   event.preventDefault();
-  console.log({ email: email.value, message: message.value });
-
-  if (email.value === "" || message.value === "") {
-    return alert("Ви не заповнили потрібні поля!!! Будь ласка, заповніть усі поля!");
-  }
-
   localStorage.removeItem(LS_KEY);
   event.currentTarget.reset();
   dataForm = {};
