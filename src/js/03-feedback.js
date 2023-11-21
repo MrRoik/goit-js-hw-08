@@ -42,6 +42,8 @@ function descFeedbackForm() {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  console.log({ email: email.value, message: message.value });
+  
   localStorage.removeItem(LS_KEY);
   event.currentTarget.reset();
   dataForm = {};
